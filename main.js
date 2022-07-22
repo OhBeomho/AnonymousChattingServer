@@ -17,7 +17,7 @@ const users = []
 
 io.on("connection", socket => {
     console.log(`[${dayjs().format("YYYY-MM-DD HH:mm:ss")}] CLIENT CONNECTED. INFO:`, socket.request.connection._peername)
-    socket.username = "User" + users.length
+    socket.username = "User" + users.length + 1
     users.push(socket)
     socket.emit("name", socket.username)
     io.emit("server", socket.username + "님이 들어왔습니다.")
